@@ -4,7 +4,7 @@ object WallService {
 
 
     fun add(post: Post): Post {
-        posts += post.copy(id = getID())
+        posts += post.copy(id = setID())
         return posts.last()
     }
 
@@ -18,7 +18,7 @@ object WallService {
         return false
     }
 
-    private fun getID(): Long {
+    private fun setID(): Long {
         lastID += 1
         return lastID
     }
