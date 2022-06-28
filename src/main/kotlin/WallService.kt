@@ -9,9 +9,9 @@ object WallService {
     }
 
     fun update(post: Post): Boolean {
-        for ((index, thisPost) in posts.withIndex()) {
-            if (thisPost.id == post.id) {
-                posts[index] = post.copy(ownerID = thisPost.ownerID, date = thisPost.date)
+        for ((index, target) in posts.withIndex()) {
+            if (target.id == post.id) {
+                posts[index] = post.copy(id = target.id, ownerID = target.ownerID, date = target.date)
                 return true
             }
         }
@@ -22,4 +22,6 @@ object WallService {
         lastID += 1
         return lastID
     }
+
+    fun getPosts() = posts
 }
