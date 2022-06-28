@@ -1,2 +1,25 @@
-class Post {
-}
+import java.time.LocalDate
+
+data class Post(
+    val id: Long,
+    val ownerID: Long,
+    val fromID: Long,
+    val createdBy: Int,
+    val date: LocalDate = LocalDate.now(),
+    val text: String,
+    val replyOwnerID: Int,
+    val replyPostID: Int,
+    val friendsOnly: Boolean = false,
+    val comments: ArrayList<String> = ArrayList(),
+    val likes:Int = 0,
+    val repost:Int = 0,
+    val views:Int = 0,
+    val postType:String = "post",
+    val signerID:Int,
+    val canPin:Boolean = true,
+    val canDelete:Boolean = true,
+    val canEdit:Boolean = true,
+    val isPinned:Boolean = false,
+    val markedAsADS:Boolean = false,
+    val isFavorite:Boolean = false,
+    )
