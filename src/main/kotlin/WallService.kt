@@ -23,5 +23,10 @@ object WallService {
         return lastID
     }
 
-    fun getPosts() = posts
+    fun getPosts() {
+        for (post in posts) {
+            val (id, _, _, _, _, text) = post
+            println("ID = $id,Text =  $text")
+        }
+    }
 }
